@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KC Tangerang Cikupa - 17609</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-top: #58a0e0;
+      --bg-bottom: #375aa8;
+      --card-bg: #ffffff;
+      --muted: #7c8aa3;
+      --accent: #ffd400;
+      --container-width: 380px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:24px 12px;
+      color:#fff;
+    }
+
+    .card {
+      width:100%;
+      max-width: var(--container-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius:14px;
+      padding:22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      position:relative;
+      min-height:640px;
+      overflow:hidden;
+    }
+
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:6px;
+    }
+    .logo {
+      width:92px;
+      height:92px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border: 6px solid rgba(255,255,255,0.06);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25), inset 0 -6px 12px rgba(0,0,0,0.08);
+    }
+    .logo img{width:68%;height:68%;object-fit:contain;border-radius:50%;}
+
+    .title{text-align:center;margin-top:12px;}
+    .title h1{margin:0;font-size:20px;color:#ffd54a;font-weight:700;}
+    .address{margin-top:8px;color:rgba(255,255,255,0.92);font-weight:600;font-size:12px;}
+    .subaddress{margin-top:10px;background:rgba(255,255,255,0.06);padding:12px;border-radius:6px;font-size:12px;}
+
+    .links{margin-top:18px;display:flex;flex-direction:column;gap:12px;}
+    .link-item{
+      display:flex;align-items:center;gap:12px;
+      background:#fff;color:#243044;
+      padding:12px;border-radius:6px;
+      box-shadow:0 6px 14px rgba(6,20,45,0.12);
+      justify-content:space-between;
+      transition:.12s;
+      text-decoration:none;
+    }
+    .link-left{display:flex;gap:12px;align-items:center;min-width:0;}
+    .thumb{width:46px;height:46px;border-radius:6px;overflow:hidden;}
+    .thumb img{width:100%;height:100%;object-fit:cover;}
+    .link-title{font-weight:600;font-size:14px;}
+    .link-sub{font-size:12px;color:var(--muted);margin-top:4px;}
+    .menu-dots{width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+
+    .footer {margin-top:14px;text-align:center;font-size:12px;opacity:0.9;}
+
+    /* Modal */
+    .modal {
+      display:none;position:fixed;z-index:999;left:0;top:0;
+      width:100%;height:100%;background:rgba(0,0,0,0.6);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .modal-content {
+      background:#fff;color:#000;
+      padding:20px;border-radius:10px;
+      text-align:center;width:300px;
+    }
+    .pin-inputs{display:flex;justify-content:center;gap:8px;margin:15px 0;}
+    .pin-inputs input {
+      width:35px;height:40px;font-size:20px;text-align:center;
+      border:2px solid #ccc;border-radius:6px;
+    }
+    .btn{background:#0066cc;color:#fff;padding:8px 16px;border:none;border-radius:6px;cursor:pointer;}
+    .btn:hover{background:#004c99;}
+    .error{color:red;font-size:13px;}
+    .success{color:green;font-size:13px;}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-wrap">
+      <div class="logo">
+        <img src="https://gamzzyo.github.io/penyimpanan/bank-mandiri-2.png" alt="logo" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </div>
+
+    <div class="title">
+      <h1>KC Tangerang Cikupa</h1>
+      <div class="address">Pertokoan Cikupa Blok B No.3, Jl. Raya Serang Km. 14, Talagasari, Kec. Cikupa, Kabupaten Tangerang, Banten 15710</div>
+    </div>
+
+    <div class="subaddress">Silahkan Pilih opsi berikut :</div>
+
+    <div class="links">
+      <a class="link-item" href="https://gamzzyo.github.io/kc_tangerang_cikupa/calon_nasabah.html"><div class="link-left"><div class="thumb"><img src="https://gamzzyo.github.io/penyimpanan/bank-mandiri-2.png"></div><div><div class="link-title">Belum jadi Nasabah Mandiri ?</div><div class="link-sub">Gabung yuk di sini..</div></div></div></a>
+
+      <a class="link-item" href="https://gamzzyo.github.io/kc_tangerang_cikupa/nasabah_mandiri.html"><div class="link-left"><div class="thumb"><img src="https://gamzzyo.github.io/penyimpanan/bank-mandiri-2.png"></div><div><div class="link-title">Nasabah Mandiri ?</div><div class="link-sub">Lihat yuk apa aja yang ada di sini..</div></div></div></a>
+
+      <!-- Admin -->
+      <a class="link-item" href="https://gamzzyo.github.io/kc_tangerang_cikupa/admin.html" id="adminLink">
+        <div class="link-left">
+          <div class="thumb"><img src="https://gamzzyo.github.io/penyimpanan/bank-mandiri-2.png"></div>
+          <div>
+            <div class="link-title">Admin KC Tangerang Cikupa</div>
+            <div class="link-sub">klik di sini..</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer">@KC Tangerang Cikupa, 2025</div>
+  </div>
+
+  <!-- Modal PIN -->
+  <div id="pinModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h3>Masukkan PIN Admin</h3>
+      <div class="pin-inputs">
+        <input type="password" maxlength="1">
+        <input type="password" maxlength="1">
+        <input type="password" maxlength="1">
+        <input type="password" maxlength="1">
+        <input type="password" maxlength="1">
+        <input type="password" maxlength="1">
+      </div>
+      <button class="btn" id="submitPin">Submit</button>
+      <p id="pinMessage"></p>
+    </div>
+  </div>
+
+  <script>
+    const adminLink = document.getElementById('adminLink');
+    const modal = document.getElementById('pinModal');
+    const submitBtn = document.getElementById('submitPin');
+    const pinInputs = modal.querySelectorAll('input');
+    const message = document.getElementById('pinMessage');
+    const correctPin = "gamast"; // PIN yang benar
+
+    adminLink.addEventListener('click', e => {
+      e.preventDefault();
+      modal.style.display = 'flex';
+      pinInputs[0].focus();
+    });
+
+    submitBtn.addEventListener('click', () => {
+      let pin = "";
+      pinInputs.forEach(i => pin += i.value);
+      if (pin === correctPin) {
+        message.textContent = "PIN benar! Mengalihkan...";
+        message.className = "success";
+        setTimeout(() => {
+          window.location.href = "admin.html"; // ganti dengan link admin
+        }, 1000);
+      } else {
+        message.textContent = "PIN salah, coba lagi.";
+        message.className = "error";
+        pinInputs.forEach(i => i.value = "");
+        pinInputs[0].focus();
+      }
+    });
+
+    // Auto move ke input berikutnya
+    pinInputs.forEach((input, idx) => {
+      input.addEventListener('input', () => {
+        if (input.value && idx < pinInputs.length - 1) {
+          pinInputs[idx+1].focus();
+        }
+      });
+    });
+
+    // Tutup modal kalau klik luar box
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        message.textContent = "";
+        pinInputs.forEach(i => i.value = "");
+      }
+    }
+  </script>
+</body>
+</html>
